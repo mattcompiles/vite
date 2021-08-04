@@ -142,12 +142,6 @@ export async function transformRequest(
     isDebug && debugTransform(`${timeFrom(transformStart)} ${prettyUrl}`)
     code = transformResult.code!
     map = transformResult.map
-
-    if (mod.id) {
-      transformResult.watchFiles.forEach((file) => {
-        moduleGraph.addWatchModuleToFile(file, mod.id!)
-      })
-    }
   }
 
   if (map && mod.file) {
